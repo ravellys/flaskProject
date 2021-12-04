@@ -3,7 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/post/<string:var1>/<string:var2>/<string:metodo>')
+@app.route('/<string:metodo>/<string:var1>/<string:var2>')
 def triangulo_retangulo(var1, var2, metodo):
 
     try:
