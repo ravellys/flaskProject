@@ -1,9 +1,12 @@
 from flask import Flask
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/<string:metodo>/<string:var1>/<string:var2>')
+@cross_origin()
 def triangulo_retangulo(var1, var2, metodo):
 
     try:
